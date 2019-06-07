@@ -71,8 +71,8 @@ const char* print(const char* out) {
 static const struct arg args[] = {
         { wifi_essid, "|\x04 Wifi %s", "wls1"},
         { cpu_perc,   "|\x03 CPU %2s%%", NULL },
-        { ram_used,   "|\x05 RAM %sB", NULL },
+        { ram_used,   "|\x05 RAM %s", NULL },
+	{ battery_perc, "|\x01 BAT %s%%", "BAT0"},
 	{ datetime,   "|\x02%s", " %a, %d %b %T" },
-	{ run_command, "|%s", "/home/ivan/scripts/listen"},
 
 };
