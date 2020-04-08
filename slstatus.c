@@ -6,6 +6,7 @@
 #include <string.h>
 #include <time.h>
 #include <X11/Xlib.h>
+#include <locale.h>
 
 #include "arg.h"
 #include "slstatus.h"
@@ -55,6 +56,7 @@ main(int argc, char *argv[])
 	char status[MAXLEN];
 	const char *res;
 
+	setlocale(LC_ALL, "");
 	sflag = 0;
 	ARGBEGIN {
 		case 's':

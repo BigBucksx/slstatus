@@ -79,3 +79,7 @@ const char *vol_perc(const char *card);
 /* wifi */
 const char *wifi_perc(const char *interface);
 const char *wifi_essid(const char *interface);
+
+/*wrappers*/
+const char *get_volume();
+const char *get_battery_perc(const char *battery);

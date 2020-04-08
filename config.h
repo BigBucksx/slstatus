@@ -1,10 +1,10 @@
 /* See LICENSE file for copyright and license details. */
 
-#define R_MARGIN	"\uE0B1"
-#define L_MARGIN	"\uE0B3"
+//#define R_MARGIN	"\uE0B1"
+//#define L_MARGIN	"\uE0B3"
 
 /* interval between updates (in ms) */
-const unsigned int interval = 1000;
+const unsigned int interval = 500;
 
 /* text to show if no value can be retrieved */
 static const char unknown_str[] = "n/a";
@@ -69,11 +69,10 @@ const char* print(const char* out) {
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  */
 static const struct arg args[] = {
-        { wifi_essid, "|\x04 Wifi %s", "wls1"},
-        { cpu_perc,   "|\x03 CPU %2s%%", NULL },
-        { ram_used,   "|\x05 RAM %s", NULL },
-	{ battery_perc, "|\x01 BAT %s%%", "BAT0"},
-	{ battery_state, "|\x01 %s", "BAT0" },
-	{ datetime,   "|\x02%s", " %a, %d %b %T" },
+	{ datetime,   "/\x02 \uf073 %s ", " %a, %d %b %T  " },
+        { wifi_essid, "/\x02 \uf1eb %s  ", "wls1"}, /* \uf1eb */
+        { ram_used,   "/\x02 \uf2db %s  ", NULL },
 
+	{ get_battery_perc, "/%s ", "BAT0" }, 
+	{ get_volume, "/\x02 %s ", NULL },
 };

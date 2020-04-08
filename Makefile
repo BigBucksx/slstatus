@@ -25,8 +25,8 @@ COM =\
 	components/uptime\
 	components/user\
 	components/volume\
-	components/wifi
-
+	components/wifi\
+	wrappers
 all: slstatus
 
 $(COM:=.o): config.mk $(REQ:=.h)
