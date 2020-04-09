@@ -69,10 +69,10 @@ const char* print(const char* out) {
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  */
 static const struct arg args[] = {
-	{ datetime,   "/\x02 \uf073 %s ", " %a, %d %b %T  " },
-        { wifi_essid, "/\x02 \uf1eb %s  ", "wls1"}, /* \uf1eb */
-        { ram_used,   "/\x02 \uf2db %s  ", NULL },
+	{ datetime,   "/\x06 \uf073 %s ", " %a, %d %b %T  " },
+        { wifi_essid, "/\x06 \uf1eb %s  ", "wls1"}, /* \uf1eb */
+        { ram_used,   "/\x06 \uf2db %s  ", NULL },
 
 	{ get_battery_perc, "/%s ", "BAT0" }, 
-	{ get_volume, "/\x02 %s ", NULL },
+	{ get_volume, "/\x06 %s ", NULL },
 };

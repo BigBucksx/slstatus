@@ -69,17 +69,17 @@ get_battery_perc(const char *batt)
 	if(ret > 75) 
 		cpytobuf(COLOR_GREEN, BATTERY_FULL, volume, delim);
 
-	else if(ret > 50 && ret < 75) 
+	else if(ret > 50 && ret <= 75) 
 		cpytobuf(COLOR_GREEN,BATTERY_THREE_QUARTERS, volume, delim);
 
-	else if( ret > 25 && ret < 50)
+	else if( ret > 25 && ret <= 50)
 		cpytobuf(COLOR_GREEN, BATTERY_HALF, volume, delim);
 
-	else if( ret > 10 && ret < 25)
-		cpytobuf(COLOR_GREEN, BATTERY_QUARTER, volume, delim);
+	else if( ret > 10 && ret <= 25)
+		cpytobuf(COLOR_RED, BATTERY_QUARTER, volume, delim);
 
-	else if(ret >= 0 && ret < 10) 
-		cpytobuf(COLOR_GREEN, BATTERY_EMPTY, volume, delim);
+	else if(ret > 0 && ret <= 10) 
+		cpytobuf(COLOR_RED, BATTERY_EMPTY, volume, delim);
 
 	if(charger > 0) {
 	       	strcat(buf, " ");	
